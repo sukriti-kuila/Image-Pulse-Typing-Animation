@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        p{
+            margin-top: 40px;
+            outline: 2px solid black;
+            background-color: tomato;
+            font-size: 20px;
+            padding: 5px;
+        }
+        img{
+            border-radius: 50%;
+            animation: pulse 4s;
+        }
+         @keyframes pulse { 
+            from{
+                box-shadow: 0 0 0 0 rgb(153, 1, 255, 0.8);
+            }
+            to{
+                box-shadow: 0 0 0 50px rgba(153, 1, 255, 0);
+            }
+        } 
+
+    </style>
+</head>
+<body>
+    <div>
+        <img src="IMG_20211116_151828.jpg" alt="" height="200px" width="202px">
+        <p id="para"></p>
+    </div>
+
+    <script>
+        let text = "SUKRITI KUILA";
+        let i = 0;
+        function type() {
+            if (i<text.length)
+            document.getElementById("para").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type,100);
+        }
+        type();
+        
+    </script>
+</body>
+</html>
